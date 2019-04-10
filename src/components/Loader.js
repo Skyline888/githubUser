@@ -4,7 +4,7 @@ import '../loading.css';
 
 
 
-const LoadingPage = props =>
+const LoadingPage = () =>
     <div className="loading-wrap">
         <div className="dna">
             <div className="ele">

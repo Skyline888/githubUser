@@ -1,47 +1,25 @@
 import  {
-    FETCH_USERS_REQUEST,
     FETCH_USERS_SUCCESS,
     FETCH_USERS_FAILED,
-    FETCH_USERS_PROJECTS_REQUEST,
-    FETCH_USERS_PROJECTS_SUCCESS,
-    FETCH_USERS_PROJECTS_FAILED,
+    FETCH_USERS_PROJECT_SUCCESS,
+    FETCH_USERS_PROJECT_FAILED,
 } from '../../action';
 
 
 const intialState = {
     fetching: true,
     fetched: false,
-    projects: [],
-    users: [],
-    errors: []
+    usersInfo: [],
+    userProject: [],
+    error: [],
 };
 
 export default function reducer(state=intialState, action) {
     switch (action.type) {
-        case FETCH_USERS_REQUEST:{
-            return {
-                ...state,
-                fetching: false,
-            };
-        }
-        case FETCH_USERS_PROJECTS_REQUEST:{
-            return {
-                ...state,
-                fetching: false,
-            };
-        }
         case FETCH_USERS_SUCCESS: {
             return {
                 ...state,
-                users: action.payload, //...state.data, action.payload
-                fetched: true,
-                fetching: false
-            };
-        }
-        case FETCH_USERS_PROJECTS_SUCCESS: {
-            return {
-                ...state,
-                projects: action.payload, //...state.data, action.payload
+                usersInfo: [...state.usersInfo, action.payload.data],
                 fetched: true,
                 fetching: false
             };
@@ -54,7 +32,15 @@ export default function reducer(state=intialState, action) {
                 fetching: false
             };
         }
-        case FETCH_USERS_PROJECTS_FAILED: {
+        case FETCH_USERS_PROJECT_SUCCESS: {
+            return {
+                ...state,
+                userProject: [...state.userProject, action.payload.data],
+                fetched: true,
+                fetching: false
+            };
+        }
+        case FETCH_USERS_PROJECT_FAILED: {
             return {
                 ...state,
                 error: action.payload,

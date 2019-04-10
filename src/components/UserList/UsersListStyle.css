@@ -1,0 +1,31 @@
+.users-list {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin: 30px 0;
+}
+.users-list__area {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: space-around;
+}
+.users-list__title {
+    padding: 16px;
+    padding-bottom: 5px;
+    margin-bottom: 0 !important;
+}
+.users-list__сontent {
+    height: 150px;
+    overflow-y: scroll;
+}
+.users-list__card {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+.users-list__media {
+    height: 140px;
+}

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import weather from './weather';
+import gitHubApi from './gitHubApi';
 
 export default combineReducers({
-    weather,
+    gitHubApi,
 })
